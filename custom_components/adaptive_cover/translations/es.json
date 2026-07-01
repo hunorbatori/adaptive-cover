@@ -493,5 +493,39 @@
         "mode2": "bidireccional (0% = cerrado / 50% = abierto / 100% = cerrado)"
       }
     }
+  },
+  "entity": {
+    "select": {
+      "adaptive_control_mode": {
+        "name": "Modo de control",
+        "state": {
+          "auto": "Auto",
+          "off": "Apagado",
+          "all_open": "Todas abiertas",
+          "all_closed": "Todas cerradas"
+        }
+      }
+    },
+    "cover": {
+      "all_blinds": {
+        "name": "Todas las persianas"
+      }
+    },
+    "switch": {
+      "all_blinds_control": {
+        "name": "Control todas las persianas"
+      },
+      "all_blinds_security": {
+        "name": "Seguridad todas las persianas"
+      }
+    },
+    "scene": {
+      "all_blinds_open": {
+        "name": "Abrir todas las persianas"
+      },
+      "all_blinds_closed": {
+        "name": "Cerrar todas las persianas"
+      }
+    }
   }
 }
