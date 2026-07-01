@@ -594,6 +594,12 @@ class AdaptiveHorizontalCover(AdaptiveVerticalCover):
     def calculate_percentage(self) -> float:
         """Convert awn length to percentage or default value."""
         result = self.calculate_position() / self.awn_length * 100
+        if (
+            self.enable_effective_min
+            and self.effective_min
+            and self.effective_min > 0
+        ):
+            result = self.effective_min + result * (100 - self.effective_min) / 100
         return round(result)
 
 
