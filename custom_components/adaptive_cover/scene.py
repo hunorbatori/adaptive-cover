@@ -54,9 +54,19 @@ class AdaptiveCoverScene(Scene):
 
     _attr_has_entity_name = False  # no device prefix — voice assistants see the raw name
 
-    _KEYS = {
-        "all_open": "all_blinds_open",
-        "all_closed": "all_blinds_closed",
+    _NAME_MAP = {
+        "all_open": {
+            "en": "Open All Blinds",
+            "fr": "Volets ouverts",
+            "nl": "Open alle jaloezieën",
+            "es": "Abrir todas las persianas",
+        },
+        "all_closed": {
+            "en": "Close All Blinds",
+            "fr": "Volets fermés",
+            "nl": "Sluit alle jaloezieën",
+            "es": "Cerrar todas las persianas",
+        },
     }
 
     def __init__(
@@ -69,7 +79,8 @@ class AdaptiveCoverScene(Scene):
         """Initialise the scene for *mode* (``all_open`` / ``all_closed``)."""
         self.hass = hass
         self._mode = mode
-        self._attr_translation_key = self._KEYS[mode]
+        lang = (hass.config.language or "en").split("-")[0]
+        self._attr_name = self._NAME_MAP[mode].get(lang, self._NAME_MAP[mode]["en"])
         # Suffix "_v2" forces fresh entity registry entry (old entry had device prefix in name)
         self._attr_unique_id = f"{config_entry.entry_id}_scene_{mode}_v2"
         self._attr_device_info = device_info

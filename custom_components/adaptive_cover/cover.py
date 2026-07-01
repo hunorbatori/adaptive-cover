@@ -226,12 +226,20 @@ class AdaptiveCoverAll(CoverEntity):
         | CoverEntityFeature.STOP
         | CoverEntityFeature.SET_POSITION
     )
-    _attr_translation_key = "all_blinds"
+
+    _NAME_MAP = {
+        "en": "All Blinds",
+        "fr": "Les volets",
+        "nl": "Alle jaloezieën",
+        "es": "Todas las persianas",
+    }
 
     def __init__(self, hass: HomeAssistant, config_entry: ConfigEntry) -> None:
         """Tie this entity to the hub config entry's own device."""
         self.hass = hass
         self._config_entry = config_entry
+        lang = (hass.config.language or "en").split("-")[0]
+        self._attr_name = self._NAME_MAP.get(lang, self._NAME_MAP["en"])
         self._attr_unique_id = f"{config_entry.entry_id}_all_blinds"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, config_entry.entry_id)},
