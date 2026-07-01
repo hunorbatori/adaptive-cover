@@ -43,6 +43,8 @@ class AdaptiveGeneralCover(ABC):
     blind_spot_on: bool
     min_elevation: int
     max_elevation: int
+    enable_effective_min: bool = False
+    effective_min: int = 0
     sun_data: SunData = field(init=False)
 
     def __post_init__(self):
@@ -561,6 +563,12 @@ class AdaptiveVerticalCover(AdaptiveGeneralCover):
             "Converting height to percentage: %s / %s * 100", position, self.h_win
         )
         result = position / self.h_win * 100
+        if (
+            self.enable_effective_min
+            and self.effective_min
+            and self.effective_min > 0
+        ):
+            result = self.effective_min + result * (100 - self.effective_min) / 100
         return round(result)
 
 
