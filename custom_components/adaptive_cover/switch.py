@@ -238,9 +238,7 @@ class AdaptiveCoverSwitch(
 class AdaptiveControlAllSwitch(SwitchEntity):
     """ON/OFF switch on the "All Blinds" hub device.
 
-    Designed for Alexa voice control:
-      - "Alexa, active les volets"    → turn ON  → adaptive positioning enabled.
-      - "Alexa, désactive les volets" → turn OFF → adaptive positioning disabled.
+    Selecting this switch activates adaptive positioning on the aggregate level.
     """
 
     _attr_has_entity_name = False

@@ -6,12 +6,8 @@ Two scenes are exposed on the "All Blinds" hub device:
   all_closed — every cover moves to 0 %   (manual override activated).
 
 These scenes are primarily useful for HA automations and shortcuts.
-For Alexa voice control of open / close, the aggregate cover entity
-``cover.tous_les_volets`` already handles "Alexa, ouvre / ferme les volets"
-natively without needing these scenes.
-
-Adaptive control ON/OFF is handled by the hub switch entity (see switch.py)
-which Alexa understands as "active / désactive les volets".
+For Alexa voice control of open / close, use the aggregate cover entity.
+Adaptive control ON/OFF is handled by the hub switch entity (see switch.py).
 """
 
 from __future__ import annotations

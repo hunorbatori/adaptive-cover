@@ -212,6 +212,9 @@ class AdaptiveCoverAll(CoverEntity):
       - ``turn_off`` → disables adaptive control on every entry.
       - ``is_closed`` → True when every known cover is at 0 %.
       - ``current_cover_position`` → average position across all covers.
+
+    Entity name comes from the ``all_blinds`` translation key — "All Blinds"
+    in English, "Les volets" in French.
     """
 
     _attr_has_entity_name = False  # no device prefix — voice assistants see the raw name
