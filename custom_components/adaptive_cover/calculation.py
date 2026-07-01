@@ -12,7 +12,7 @@ from homeassistant.core import HomeAssistant
 from numpy import cos, sin, tan
 from numpy import radians as rad
 
-from .helpers import get_domain, get_safe_state, is_presence_detected, state_attr
+from .helpers import get_domain, get_safe_state, is_presence_detected
 from .sun import SunData
 from .config_context_adapter import ConfigContextAdapter
 
@@ -43,8 +43,8 @@ class AdaptiveGeneralCover(ABC):
     blind_spot_on: bool
     min_elevation: int
     max_elevation: int
-    enable_effective_min: bool = False
-    effective_min: int = 0
+    enable_effective_min: bool
+    effective_min: int
     sun_data: SunData = field(init=False)
 
     def __post_init__(self):
