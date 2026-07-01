@@ -518,6 +518,27 @@
             "all_closed": "Tous fermés"
           }
         }
+      },
+      "cover": {
+        "all_blinds": {
+          "name": "Les volets"
+        }
+      },
+      "switch": {
+        "all_blinds_control": {
+          "name": "Les volets"
+        },
+        "all_blinds_security": {
+          "name": "Sécurité volets"
+        }
+      },
+      "scene": {
+        "all_blinds_open": {
+          "name": "Volets ouverts"
+        },
+        "all_blinds_closed": {
+          "name": "Volets fermés"
+        }
       }
     }
   }

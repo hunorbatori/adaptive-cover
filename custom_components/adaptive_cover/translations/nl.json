@@ -479,5 +479,39 @@
         "mode2": "twee-richtings (0% = dicht / 50% = open / 100% = dicht)"
       }
     }
+  },
+  "entity": {
+    "select": {
+      "adaptive_control_mode": {
+        "name": "Bedieningsmodus",
+        "state": {
+          "auto": "Auto",
+          "off": "Uit",
+          "all_open": "Alles open",
+          "all_closed": "Alles dicht"
+        }
+      }
+    },
+    "cover": {
+      "all_blinds": {
+        "name": "Alle jaloezieën"
+      }
+    },
+    "switch": {
+      "all_blinds_control": {
+        "name": "Bediening alle jaloezieën"
+      },
+      "all_blinds_security": {
+        "name": "Beveiliging alle jaloezieën"
+      }
+    },
+    "scene": {
+      "all_blinds_open": {
+        "name": "Open alle jaloezieën"
+      },
+      "all_blinds_closed": {
+        "name": "Sluit alle jaloezieën"
+      }
+    }
   }
 }
