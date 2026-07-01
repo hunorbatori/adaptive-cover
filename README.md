@@ -272,8 +272,12 @@ Security mode closes covers automatically when nobody is home, regardless of the
 
 | Variables         | Default | Range | Description                                                                                 |
 | ----------------- | ------- | ----- | ------------------------------------------------------------------------------------------- |
-| Window Height     | 2.1     | 0.1-6 | Length of fully extended cover/window                                                       |
-| Glare Zone        | 0.5     | 0.1-2 | Objects within this distance of the cover receive direct sunlight |
+| Window Height                 | 2.1     | 0.1-6 | Length of fully extended cover/window                                                       |
+| Glare Zone                    | 0.5     | 0.1-2 | Objects within this distance of the cover receive direct sunlight |
+| Effective Minimum Position     | 0       | 0-99  | Cover position at which the window is fully covered (e.g., 30% for slatted external blinds) |
+| Enable Effective Minimum       | `False` | —     | Remaps sun-geometry-calculated positions to the effective_min–100 physical range            |
+
+> When enabled, sun-geometry positions are remapped from 0–100% (logical) to effective_min–100% (physical). Configuration values (`min_position`, `max_position`, `default_height`, `sunset_pos`) remain in physical space and are unaffected.
 
 ### Horizontal
 
